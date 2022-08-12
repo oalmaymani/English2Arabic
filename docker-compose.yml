@@ -6,8 +6,7 @@ services:
     environment:
       - CONNECTION_STRING=postgres://osaid:osaid@db/belt2-day5
       - API_URL=http://api:3001/data 
-    depends_on:
-      - db
+
     networks:
       - network-backend
       - network-frontend
@@ -22,20 +21,6 @@ services:
       - "80:80"
     networks:
       - network-frontend
-
-  db:
-    image: postgres:11.2-alpine
-    container_name: belt2-day5
-    networks:
-      - network-backend
-    volumes:
-      - ./init_sql_scripts/:/docker-entrypoint-initdb.d
-    environment:
-      - POSTGRES_DB=belt2-day5
-      - POSTGRES_USER=osaid
-      - POSTGRES_PASSWORD=osaid
-    ports:
-      - 5432:5432
 
 networks:
   network-backend:
