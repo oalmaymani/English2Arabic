@@ -5,6 +5,7 @@ services:
     build: ./api
     environment:
       - CONNECTION_STRING=postgres://db/belt2-day5
+      - API_URL=http://api:3001/data
     networks:
       - network-backend
       - network-frontend
