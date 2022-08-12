@@ -4,8 +4,10 @@ services:
   api:
     build: ./api
     environment:
-      - CONNECTION_STRING=postgres://db/belt2-day5
-      - API_URL=http://api:3001/data
+      - CONNECTION_STRING=postgres://demo_user:demo_user@db/demo_db
+      - API_URL=http://api:3001/data 
+    depends_on:
+      - db
     networks:
       - network-backend
       - network-frontend
@@ -20,6 +22,17 @@ services:
       - "80:80"
     networks:
       - network-frontend
+
+  db:
+    image: postgres:11.2-alpine
+    environment:
+      POSTGRES_USER: osaid
+      POSTGRES_PASSWORD: osaid
+      POSTGRES_DB: demo_db
+    volumes:
+      - ./init_sql_scripts/:/docker-entrypoint-initdb.d
+    networks:
+      - network-backend
 
 networks:
   network-backend:
