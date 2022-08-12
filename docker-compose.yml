@@ -4,7 +4,7 @@ services:
   api:
     build: ./api
     environment:
-      - CONNECTION_STRING=postgres://osaid:osaid@db/demo_db
+      - CONNECTION_STRING=postgres://demo_user:demo_user@db/belt2-day5
     networks:
       - network-backend
       - network-frontend
