@@ -25,18 +25,17 @@ services:
 
   db:
     image: postgres:11.2-alpine
-    container_name: postgres-db
-    hostname: belt2-day5
+    container_name: belt2-day5
     networks:
       - network-backend
     volumes:
       - ./init_sql_scripts/:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=belt2-day5
+      - POSTGRES_DB=demo_db
+      - POSTGRES_USER=osaid
       - POSTGRES_PASSWORD=osaid
     ports:
-      - 127.0.0.1:5432
+      - 5432:5432
 
 networks:
   network-backend:
