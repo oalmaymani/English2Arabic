@@ -4,10 +4,8 @@ services:
   api:
     build: ./api
     environment:
-      - CONNECTION_STRING=postgres://demo_user:demo_user@db/demo_db
+      - CONNECTION_STRING=postgres://osaid:osaid@db/belt2-day5
       - API_URL=http://api:3001/data 
-    depends_on:
-      - db
     networks:
       - network-backend
       - network-frontend
