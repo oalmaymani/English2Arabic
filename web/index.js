@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
             if (!err && resp.statusCode === 200) {
                 var objData = JSON.parse(body);
                 var c_cap = objData.data;
-                var responseString = `<table border="1"><tr><td>english2arabic</td><td>Capital</td></tr>`;
+                var responseString = `<table border="1"><tr><td>english2arabic</td><td>arabic</td></tr>`;
 
                 for (var i = 0; i < c_cap.length; i++)
                     responseString = responseString +

@@ -1,6 +1,9 @@
-create table english2arabic (country text,capital text);
+create table english2arabic (
+	english text,
+	arabic text
+);
 
-insert into english2arabic(country, capital) values ('India', 'Delhi');
-insert into english2arabic(country, capital) values ('China', 'Beijing');
-insert into english2arabic(country, capital) values ('Bhutan', 'Thimpu');
-insert into english2arabic(country, capital) values ('Russia', 'Moscow');
+insert into english2arabic(english, arabic) values ('Good morning', 'Sabah Alkhar');
+insert into english2arabic(english, arabic) values ('It was fun', 'Kan mumtiean');
+insert into english2arabic(english, arabic) values ('Yes', 'Naam');
+insert into english2arabic(english, arabic) values ('No', 'La');

@@ -11,7 +11,7 @@ const pool = new Pool({
 });
 
 app.get('/data', function(req, res) {
-    pool.query('SELECT country, capital from english2arabic', [], (err, result) => {
+    pool.query('SELECT english, arabic from english2arabic', [], (err, result) => {
         if (err) {
             return res.status(405).jsonp({
                 error: err
