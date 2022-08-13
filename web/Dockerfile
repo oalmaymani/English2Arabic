@@ -7,5 +7,5 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
-EXPOSE 80:300
+EXPOSE 80:3000
 CMD [ "node", "index.js" ]
