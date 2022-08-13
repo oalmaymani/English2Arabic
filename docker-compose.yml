@@ -4,7 +4,8 @@ services:
   api:
     build: ./api
     environment:
-      - CONNECTION_STRING=postgres://osaid:osaid@db/demo_db 
+      - CONNECTION_STRING=postgres://osaid:osaid@db/demo_db
+
     depends_on:
       - db
     networks:
@@ -18,7 +19,7 @@ services:
     depends_on:
       - api
     ports:
-      - "80:3000"
+      - "80:80"
     networks:
       - network-frontend
 
@@ -29,10 +30,11 @@ services:
       POSTGRES_PASSWORD: osaid
       POSTGRES_DB: demo_db
     volumes:
-      - ./sql_scripts/:/docker-entrypoint-initdb.d
+      - ./init_sql_scripts/:/docker-entrypoint-initdb.d
     networks:
       - network-backend
 
 networks:
   network-backend:
   network-frontend:
+
