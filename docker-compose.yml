@@ -1,4 +1,4 @@
-version: "3.2"
+version: "3.4"
 
 services:
   api:
@@ -25,7 +25,7 @@ services:
   db:
     image: postgres:11.2-alpine
     environment:
-      POSTGRES_USER: osaid
+      POSTGRES_USER: osaid 
       POSTGRES_PASSWORD: osaid
       POSTGRES_DB: demo_db
     volumes:
