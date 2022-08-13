@@ -1,5 +1,6 @@
 version: "3.7"
- services:
+
+services:
    api:
      build: ./api 
      environment: 
@@ -29,6 +30,6 @@ version: "3.7"
        - ./sql_scripts/:/docker-entrypoint-initdb.d 
      networks: 
        - network-backend
- networks: 
+networks: 
    network-backend: 
    network-frontend:
